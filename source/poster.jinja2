@@ -2,43 +2,34 @@
 
 {## Header ##}
 
-{% set poster_title = "Building your own HTML poster" %}
-{# ‘poster_subtitle’ is optional; use "" to hide it #}
-{% set poster_subtitle = "A tutorial on using this template to make your own posters" %}
-{# Change ‘venue’ to a conference or workshop name if any #}
+{% set poster_title = "Mice do cool stuff" %}
+{% set poster_subtitle = "" %}
 {% set venue = "Unpublished" %}
-{# ‘webpage_title’ is displayed in the browser’s top bar #}
 {% set webpage_title = poster_title + " — " + poster_subtitle %}
-{# ‘project_url’ is used in the footer and for the logo #}
-{% set project_url = "https://github.com/cpitclaudel/academic-poster-template" %}
-
-{# Publication info is hidden by default (.publication-info in CSS) #}
-{% set pub_datetime_iso = "2020-09-08" %}
-{% set pub_date = "September 8, 2020" %}
-
-{% block custom_head %}
-<style type="text/css">
-  html { font-size: 1.15rem }
-</style>
-{% endblock %}
+{% set project_url = "https://icahn.mssm.edu" %}
+{% set pub_datetime_iso = "2021-04-14" %}
+{% set pub_date = "April 14, 2021" %}
 
 {% block authors %}
-  {# Put authors here, with one link per author. #}
-  <a property="author">Clément Pit-Claudel<sup>a</sup></a>
+  <a property="author"><strong>Tristan Shuman</strong><sup>1</sup>,</a>
+  <a property="author">Daniel Aharoni<sup>1</sup>,</a>
+  <a property="author">Denise J. Cai<sup>2</sup></a>
 {% endblock %}
 
 {% block affiliations %}
-  <sup>a</sup><a property="sourceOrganization">MIT CSAIL</a>
+  <sup>1</sup><a property="sourceOrganization">Department of Neurology, University of California, Los Angeles</a>
+  <br>
+  <sup>2</sup><a property="sourceOrganization">Department of Neurobiology, University of California, Los Angeles</a>
 {% endblock %}
 
 {# Project logos shown on the left side #}
 {% block project_logos %}
-  <a href="{{ project_url }}"><img src="img/logo.svg" alt="Tutorial logo"></a>
+  <a href="{{ project_url }}"><img src="img/logo_sinai.jpg" alt="Mount Sinai"></a>
 {% endblock %}
 
 {# Extra logos shown on the right side #}
 {% block logos %}
-  <a href="https://csail.mit.edu"><img style="background: white" src="img/csail.png" alt="MIT CSAIL Logo"></a>
+  <a href="http://miniscope.org"><img style="background: white" src="img/logo_miniscope.jpg" alt="Miniscope"></a>
 {% endblock %}
 
 {### Footer ##}

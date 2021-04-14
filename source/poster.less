@@ -52,7 +52,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 // Global variables //
 //////////////////////
 
-@header-img-height: 5rem;
+@header-img-height: 8rem;
 
 @columns: 4;
 @column-min-width: 22.5rem;
@@ -173,13 +173,13 @@ html, body {
 }
 
 body {
-    font-family: 'Fira Sans Condensed', 'Fira Sans', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 
     > header, > footer {
         align-items: center;
-        background: black;
-        color: white;
+        background: transparent;
+        color: black;
         display: grid;
         grid-gap: @mid-space;
         padding: @mid-space;
@@ -187,10 +187,12 @@ body {
     }
 
     > header {
-        font-size: 80%;
+        font-size: 120%;
 
         img {
             max-height: @header-img-height;
+            padding-left: 5em;
+            padding-right: 5em;
         }
 
         h1 {
