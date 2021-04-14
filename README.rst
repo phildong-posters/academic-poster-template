@@ -18,10 +18,9 @@ See it in action `on a real example <https://cpitclaudel.github.io/academic-post
 Setting Up
 ==========
 
-.. code:: console
-   conda create -n poster -f environment.yml
-   conda activate poster
-   npm install -g less
-   npm install -g puppeteer
-   # modify source/poster.jinja2 as desired, then
-   make poster
+#. ``conda create -n poster -f environment.yml``
+#. ``conda activate poster``
+#. ``npm install -g less``
+#. ``npm install -g puppeteer``
+#. modify source/poster.jinja2 and source/poster.less as desired
+#. ``make poster``
