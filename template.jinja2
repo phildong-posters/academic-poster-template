@@ -75,21 +75,5 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
       {% endblock %}
     </main>
 
-    <footer>
-      <address class="monospace">
-        {%- block project_link -%}
-          <a href="{{ project_url }}">{{ project_url }}</a>
-        {%- endblock -%}
-      </address>
-      <address class="monospace">
-        {%- block contact_information -%}{%- endblock -%}
-      </address>
-      {# Feel free to remove the block below, but keep the comment in <head> #}
-      {% block credits %}
-        <span class="credits">
-          Based on an <a href="https://github.com/cpitclaudel/academic-poster-template">open poster template</a>.
-        </span>
-      {% endblock %}
-    </footer>
   </body>
 </html>
