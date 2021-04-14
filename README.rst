@@ -13,3 +13,15 @@ Modern HTML+CSS is more than enough for most academic posters:
    :align: center
 
 See it in action `on a real example <https://cpitclaudel.github.io/academic-poster-template/koika/poster.html>`__ and `follow the tutorial <https://cpitclaudel.github.io/academic-poster-template/tutorial/poster.html>`__ to create your own posters.
+
+==========
+Setting Up
+==========
+
+.. code:: console
+   conda create -n poster -f environment.yml
+   conda activate poster
+   npm install -g less
+   npm install -g puppeteer
+   # modify source/poster.jinja2 as desired, then
+   make poster
