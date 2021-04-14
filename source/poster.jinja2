@@ -22,23 +22,18 @@
   <sup>2</sup><a property="sourceOrganization">Department of Neurobiology, University of California, Los Angeles</a>
 {% endblock %}
 
-{# Project logos shown on the left side #}
 {% block project_logos %}
   <a href="{{ project_url }}"><img src="img/logo_sinai.jpg" alt="Mount Sinai"></a>
 {% endblock %}
 
-{# Extra logos shown on the right side #}
 {% block logos %}
   <a href="http://miniscope.org"><img style="background: white" src="img/logo_miniscope.jpg" alt="Miniscope"></a>
 {% endblock %}
 
 {### Contents ###}
 
-{# Contents are individual boxes (typically ‘article’s or ‘figure’s).  Each
-   ‘article’ contains a header and some contents. #}
 {% block contents %}
   <article property="abstract">
-    {# Using <h3> inside the <header> makes the structure evident to screen readers #}
     <header><h3>Abstract</h3></header>
 
     <p>Academic posters are usually designed using presentation software and distributed as images or PDFs.</p>
@@ -48,46 +43,6 @@
     <p>The recent shift to online conferences is a great opportunity to reconsider our poster-making tools, and it turns out that plain HTML5 + CSS works pretty well for making (more) accessible posters.</p>
 
     <p>This template is released under a permissive license: all we ask if you use it for your own posters is that you leave a one-line comment in the HTML sources.</p>
-  </article>
-
-  <article>
-    <header><h3>Using this template</h3></header>
-    <p>There are two ways to use this template: directly editing the HTML, and using Jinja2 templates.</p>
-  </article>
-
-  <article>
-    <header><h3>Editing the HTML directly</h3></header>
-
-    <p>This is the simplest way to get started, since it just requires a text editor:</p>
-
-    <ol>
-      <li>Download the <a href="https://github.com/cpitclaudel/academic-poster-template/releases/latest">latest release</a> of this template (or download the <a href="https://raw.githubusercontent.com/cpitclaudel/academic-poster-template/main/docs/tutorial/poster.html">webpage</a> and the corresponding <a href="https://raw.githubusercontent.com/cpitclaudel/academic-poster-template/main/docs/poster.css">stylesheet</a> directly from the <a href="https://github.com/cpitclaudel/academic-poster-template/tree/main/docs/tutorial/">repository</a>).</li>
-      <li>Adjust the metadata and add blocks to the <code>main</code> section.</li>
-    </ol>
-  </article>
-
-  <article>
-    <header><h3>Using Jinja2</h3></header>
-
-    <p>The poster is a Jinja2 template, so you can inherit from it and fill in the relevant fields and the contents.</p>
-
-    <ol>
-      <li>Clone the <a href="https://github.com/cpitclaudel/academic-poster-template/">GitHub repository</a>.</li>
-      <li>Create your own jinja2 template, starting from <a href="https://github.com/cpitclaudel/academic-poster-template/tree/main/docs/tutorial.jinja2">this tutorial</a>.</li>
-      <li>Render to HTML using the <code>render.py</code> script:<br/>
-        <code>./render.py your_jinja2_poster.jinja output.html</code>
-      </li>
-    </ol>
-
-    <b>The template for this tutorial includes documentation for each variable and block.</b>
-  </article>
-
-  <article>
-    <header><h3>Poster layout</h3></header>
-
-    <p>Posters made using this template are composed of a sequence of blocks.  You can use CSS to customize the way the blocks are designed; by default they scroll left to right on wide screens and top to bottom on narrow screens.</p>
-
-    <b>Try resizing your browser to see how the poster's layout changes.</b>
   </article>
 
   <article>
@@ -105,41 +60,6 @@
     images (&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">img</a>&gt;, &lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object">object</a>&gt;),
     tables (&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">table</a>&gt;), …</i>
 &lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">article</a>&gt;</pre>
-  </article>
-
-  <article>
-    <header><h3>Structural markup</h3></header>
-
-    <p>The following markup is useful to structure content blocks:</p>
-    <ul>
-      <li>
-        <code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">p</a>&gt;</code>
-        <p style="margin: 0">Paragraphs</p>
-        <code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">p</a>&gt;</code>
-      </li>
-
-      <li>
-        <code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">ul</a>&gt;</code>
-        <ul>
-          <li><code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li</a>&gt;</code>…<code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li</a>&gt;</code></li>
-        </ul>
-        <code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">ul</a>&gt;</code> (Plain lists)
-      </li>
-
-      <li>
-        <code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">ol</a>&gt;</code>
-        <ol>
-          <li><code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li</a>&gt;</code>…<code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">li</a>&gt;</code></li>
-        </ol>
-        <code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">ol</a>&gt;</code> (Numbered lists)
-      </li>
-
-      <li>
-        <code>&lt;<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b">b</a>&gt;</code>
-        <b>Call-outs (<i>alerts</i>)</b>
-        <code>&lt;/<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b">b</a>&gt;</code>
-      </li>
-    </ul>
   </article>
 
   <article>
@@ -233,6 +153,28 @@
   </article>
 
   <article>
+    <header><h3>Mice can learn</h3></header>
+
+    <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Morbi vulputate ex rhoncus vestibulum hendrerit.
+    Donec condimentum sed lorem sit amet volutpat.
+    Fusce nec nisl a odio fermentum ornare a eget sem.
+    Maecenas ultrices viverra hendrerit.
+    Donec ut enim et urna suscipit hendrerit sed id ligula.
+    Quisque sed tellus sit amet enim laoreet venenatis.
+    Duis sollicitudin mollis risus sit amet convallis.
+    Donec fringilla magna metus.
+    Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+    Curabitur non mauris eu nulla ultricies dictum.
+    Duis ac lectus non lectus finibus pulvinar.
+    Fusce malesuada dignissim nunc, a ullamcorper metus commodo quis.
+    </p>
+
+
+  </article>
+
+  <article>
     <header><h3>Additional styling</h3></header>
 
     <p>The template's stylesheet defines a few extra CSS classes:</p>
@@ -257,8 +199,4 @@
     </small>
   </article>
 
-  <figure style="flex-grow: 9999999">
-    <img style="width: 70%" src="img/logo.svg" alt="Project logo" />
-    <figcaption>A stand-alone figure to fill the remaining space.</figcaption>
-  </figure>
 {% endblock %}
