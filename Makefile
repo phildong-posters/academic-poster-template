@@ -1,6 +1,6 @@
-all: docs/tutorial/poster.html docs/koika/poster.html docs/poster.css
+docs: docs/tutorial/poster.html docs/koika/poster.html docs/poster.css
 
-docs/poster.css: poster.less
+docs/poster.css: source/poster.less
 	lessc --strict-units=on $< $@
 
 docs/%/:
