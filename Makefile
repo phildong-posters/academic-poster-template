@@ -17,7 +17,7 @@ clean:
 	-rm -fr docs/*/poster.{html,css}
 	-rm -fr build
 
-poster: build/poster.html build/poster.css
+poster: build/poster.html build/poster.css build/poster.pdf
 
 build/%:
 	mkdir -p build
@@ -29,5 +29,7 @@ build/poster.css: source/poster.less | build/%
 build/poster.html: source/poster.jinja2 build/poster.css | build/%
 	./render.py $< $@
 
+build/poster.pdf: build/poster.html
+	node export.js
 
 .SECONDARY:
