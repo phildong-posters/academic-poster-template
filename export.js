@@ -10,7 +10,7 @@ const puppeteer = require(`${root}/puppeteer`);
   const page = await browser.newPage();
   await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 3 });
   await page.goto(`file:${path.join(__dirname, "build/poster.html")}`);
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(3000);
   await page.pdf({
     path: "build/poster.pdf",
     printBackground: true,
