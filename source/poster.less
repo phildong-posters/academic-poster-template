@@ -107,73 +107,6 @@ b {
   // &::after { content: "  ◀"; }
 }
 
-// https://stackoverflow.com/questions/42176419/targeting-flex-items-on-the-last-or-specific-row
-@media all and (min-width: 2 * @column-max-width) {
-  body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-
-    > header,
-    > footer {
-      grid-auto-flow: column;
-      justify-content: space-between;
-    }
-
-    > header {
-      grid-template-columns: auto 1fr auto;
-    }
-  }
-
-  main {
-    align-content: flex-start;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow: auto;
-    padding: (@grid-gap / 2);
-
-    // This phantom element gives a bit of breathing room when scrolling
-    &::after {
-      content: " ";
-      display: block;
-      flex-basis: 100%;
-      width: (@grid-gap / 2);
-    }
-
-    > * {
-      flex-grow: 1;
-      margin: (@grid-gap / 2);
-      max-width: @column-max-width;
-      min-width: @column-min-width;
-      width: (100% / @columns - 1%);
-      width: calc(100% / @columns - @grid-gap);
-    }
-  }
-}
-
-@media not all and (min-width: 2 * @column-max-width) {
-  body {
-    > header,
-    > footer {
-      grid-auto-flow: row;
-      justify-content: center;
-    }
-
-    > header > div {
-      margin-bottom: @thick-space;
-    }
-  }
-
-  main > * {
-    margin: @grid-gap;
-  }
-
-  article {
-    overflow-x: auto;
-    overflow-y: hidden; // FF bug
-  }
-}
-
 html,
 body {
   height: 100%;
@@ -183,9 +116,13 @@ body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 
   > header,
   > footer {
+    grid-auto-flow: column;
+    justify-content: space-between;
     align-items: center;
     background: transparent;
     color: black;
@@ -197,6 +134,7 @@ body {
 
   > header {
     font-size: 120%;
+    grid-template-columns: auto 1fr auto;
 
     img {
       max-height: @header-img-height;
@@ -230,11 +168,30 @@ body {
 }
 
 main {
+  align-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  overflow: auto;
+  padding: (@grid-gap / 2);
   box-sizing: border-box;
   min-height: 0;
 
   > * {
+    flex-grow: 1;
+    margin: (@grid-gap / 2);
+    max-width: @column-max-width;
+    min-width: @column-min-width;
+    width: calc(100% / @columns - @grid-gap);
     box-sizing: border-box;
+  }
+
+  // This phantom element gives a bit of breathing room when scrolling
+  &::after {
+    content: " ";
+    display: block;
+    flex-basis: 100%;
+    width: (@grid-gap / 2);
   }
 
   > figure {
