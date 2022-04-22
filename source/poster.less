@@ -56,7 +56,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 @columns: 3;
 @column-min-width: 22.5rem;
-@column-max-width: 40rem;
+@column-max-width: 80rem;
 
 @thin-space: 0.25rem;
 @mid-space: 0.5rem;
@@ -343,6 +343,9 @@ article {
       }
     }
   }
+}
+article.span2 {
+  width: calc(100% / @columns * 2 - @grid-gap);
 }
 
 ////////////////////////////////
