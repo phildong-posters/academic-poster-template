@@ -137,7 +137,7 @@ body {
     grid-template-columns: auto 1fr auto;
     grid-column-gap: 4rem;
 
-    div.logos {
+    div.logo_grid {
       display: grid;
       grid-auto-flow: column;
       grid-template-rows: max-content max-content;
@@ -147,6 +147,17 @@ body {
 
       > * {
         min-height: 0;
+      }
+    }
+
+    div.logo_row {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+
+      > * {
+        margin: auto;
+        vertical-align: middle;
       }
     }
 
