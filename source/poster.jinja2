@@ -34,6 +34,17 @@
 </div>
 {% endblock %}
 
+{% block scripts %}
+<script>
+  var imScale = 0.5;
+  var imgs = document.querySelectorAll("figure img");
+  for (var i = 0; i < imgs.length; i++) {
+    var im = imgs[i];
+    im.style.width = imScale * im.naturalWidth + 'px';
+  }
+</script>
+{% endblock %}
+
 {### Contents ###}
 
 {% block contents %}
@@ -132,9 +143,7 @@
   <hr />
 
   <figure>
-    <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo.svg" width="197" height="64"
-      alt="An orange shield with a white 5 emblazoned on it and the letters HTML above it.">
-
+    <img src="img/HTML5_Logo.svg" alt="An orange shield with a white 5 emblazoned on it and the letters HTML above it.">
     <figcaption>The HTML5 logo (<i>Source: <a href="https://www.w3.org/html/logo/">W3C</a></i>)</figcaption>
   </figure>
 </article>
