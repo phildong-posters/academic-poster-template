@@ -36,12 +36,26 @@
 
 {% block scripts %}
 <script>
-  var imScale = 0.5;
-  var imgs = document.querySelectorAll("figure img");
-  for (var i = 0; i < imgs.length; i++) {
-    var im = imgs[i];
-    im.style.width = imScale * im.naturalWidth + 'px';
+  function waitForImage(imgElem) {
+    return new Promise(res => {
+      if (imgElem.complete) {
+        return res();
+      }
+      imgElem.onload = () => res();
+      imgElem.onerror = () => res();
+    });
   }
+  (async () => {
+    var imScale = 0.8;
+    var imgs = document.querySelectorAll("div.figure img");
+    for (var i = 0; i < imgs.length; i++) {
+      var im = imgs[i];
+      await waitForImage(im);
+      if (im.style.width == '') {
+        im.style.width = imScale * im.naturalWidth + 'px';
+      }
+    }
+  })();
 </script>
 {% endblock %}
 
