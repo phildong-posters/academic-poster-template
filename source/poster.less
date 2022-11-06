@@ -227,7 +227,7 @@ main {
     vertical-align: middle;
   }
 
-  figure {
+  div.figure {
     text-align: center;
 
     img {
@@ -235,13 +235,32 @@ main {
       height: auto;
     }
 
-    img:first-of-type:last-of-type,
-    object:first-of-type:last-of-type {
-      display: block;
-      margin: auto;
-    }
+    div.panel-left,
+    div.panel-top {
+      display: flex;
+      justify-content: center;
 
-    figcaption {
+      span {
+        font-weight: bolder;
+      }
+    }
+    div.panel-left {
+      flex-direction: row;
+
+      span {
+        vertical-align: top;
+        text-align: right;
+      }
+    }
+    div.panel-top {
+      flex-direction: column;
+
+      span {
+        vertical-align: bottom;
+        text-align: left;
+      }
+    }
+    p {
       display: block;
       margin-top: @mid-space;
     }
