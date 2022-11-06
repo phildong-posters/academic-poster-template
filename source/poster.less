@@ -70,7 +70,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 @color-title: white;
 @color-accent: @tango-orange-m;
-@color-bg-light: @tango-aluminum-1;
+@color-bg-light: transparent;
 @color-bg-dark: #0070c0;
 
 ///////////////////
@@ -135,16 +135,24 @@ body {
   > header {
     font-size: 120%;
     grid-template-columns: auto 1fr auto;
+    grid-column-gap: 4rem;
 
-    aside {
-      display: flex;
-      align-items: center;
+    div.logos {
+      display: grid;
+      grid-auto-flow: column;
+      grid-template-rows: max-content max-content;
+      grid-row-gap: 0.2rem;
+      grid-column-gap: 2rem;
+      height: @header-img-height;
+
+      > * {
+        min-height: 0;
+      }
     }
 
     img {
       max-height: @header-img-height;
-      padding-left: 2em;
-      padding-right: 2em;
+      place-self: center;
     }
 
     h1 {
@@ -233,7 +241,8 @@ main {
   }
 }
 
-article {
+article,
+div article {
   background: @color-bg-light;
   display: flex;
   flex-direction: column;
@@ -241,6 +250,8 @@ article {
   line-height: 1.35;
   padding: 0 @mid-space @mid-space @mid-space;
   // text-align: justify;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
 
   p,
   ul,
@@ -273,6 +284,7 @@ article {
     color: @color-title;
     margin: 0 -@mid-space auto -@mid-space;
     padding: @thin-space @mid-space;
+    border-radius: 5px 5px 0 0;
 
     > h3 {
       font-weight: 500;
