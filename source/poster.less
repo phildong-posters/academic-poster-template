@@ -446,6 +446,7 @@ div article {
   display: grid;
   grid-auto-flow: column;
   grid-gap: @mid-space;
+  justify-content: space-around;
 }
 
 .columns-top {
@@ -455,6 +456,26 @@ div article {
   align-items: center;
 }
 .columns-bottom {
+  align-items: end;
+}
+
+.rows,
+.rows-left,
+.rows-center,
+.rows-right {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: @mid-space;
+  justify-content: space-around;
+}
+
+.rows-left {
+  align-items: start;
+}
+.rows-center {
+  align-items: center;
+}
+.rows-right {
   align-items: end;
 }
 
