@@ -54,9 +54,7 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 @header-img-height: 8rem;
 
-@columns: 3;
 @column-min-width: 22.5rem;
-@column-max-width: 80rem;
 
 @thin-space: 0.25rem;
 @mid-space: 0.5rem;
@@ -195,30 +193,24 @@ body {
 }
 
 main {
-  align-content: flex-start;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  overflow: auto;
-  padding: (@grid-gap / 2);
-  box-sizing: border-box;
-  min-height: 0;
+  display: grid;
+  grid-auto-flow: column;
+  overflow: hidden;
+  column-gap: (@grid-gap / 2);
+  grid-template-columns: 1fr 1.7fr 1.3fr;
+  grid-template-rows: 1fr 1.6fr 1.8fr 1fr 0.5fr 1fr;
 
   > * {
-    flex-grow: 1;
     margin: (@grid-gap / 2);
-    max-width: @column-max-width;
     min-width: @column-min-width;
-    width: calc(100% / @columns - @grid-gap);
-    box-sizing: border-box;
-  }
 
-  // This phantom element gives a bit of breathing room when scrolling
-  &::after {
-    content: " ";
-    display: block;
-    flex-basis: 100%;
-    width: (@grid-gap / 2);
+    // > header {
+    //   overflow: hidden;
+    // }
+
+    // > :not(header) {
+    //   overflow: auto;
+    // }
   }
 
   > figure {
@@ -375,9 +367,6 @@ div article {
       }
     }
   }
-}
-article.span2 {
-  width: calc(100% / @columns * 2 - @grid-gap);
 }
 
 ////////////////////////////////
