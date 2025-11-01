@@ -18,7 +18,7 @@ See it in action `on a real example <https://cpitclaudel.github.io/academic-post
 Setting Up
 ==========
 
-#. ``conda create -n poster -f environment.yml``
+#. ``conda env create -n poster -f environment.yml``
 #. ``conda activate poster``
 #. ``npm install -g less``
 #. ``npm install -g puppeteer``

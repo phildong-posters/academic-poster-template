@@ -8,15 +8,15 @@ const puppeteer = require(`${root}/puppeteer`);
 (async () => {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 1 });
+  await page.setViewport({ width: 1920, height: 1080, deviceScaleFactor: 3 });
   await page.goto(`file:${path.join(__dirname, "build/poster.html")}`);
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(3000);
   await page.pdf({
     path: "build/poster.pdf",
     printBackground: true,
     width: "1920px",
     height: "1080px",
   });
-  await page.screenshot({ path: "build/poster.png" });
+  await page.screenshot({ path: "build/poster.jpg", quality: 100 });
   await browser.close();
 })();
